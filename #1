@@ -6,26 +6,26 @@ using namespace std;
 int main()
 {
  string s, a = "a", e = "e", y = "y", u = "u", i = "i", o = "o";
- int t = 0, c = 0, h = 0, k = 0, m = 0, z = 0;
+ int d = 0, f = 0, g = 0, h = 0, j = 0, k = 0;
  getline(cin,s);
  s.length();
- for (int p = 0; p < s.length(); p++)
+ for (int x = 0; x < s.length(); x++)
 	{
- if (s[p] == 'a')
- t++;
- if (s[p] == 'e')
- c++;
- if (s[p] == 'y')
+ if (s[x] == 'a')
+ d++;
+ if (s[x] == 'e')
+ f++;
+ if (s[x] == 'y')
+ g++;
+ if (s[x] == 'u')
  h++;
- if (s[p] == 'u')
+ if (s[x] == 'i')
+ j++;
+ if (s[x] == 'o')
  k++;
- if (s[p] == 'i')
- m++;
- if (s[p] == 'o')
- z++;
  }
     {
-        cout << "a = " << t << "; " << "e = " << c << "; " << "y = " << h << "; " << "u = " << k << "; " << "i = " << m << "; " << "i = " << z << "; " << endl;
+        cout << "a = " << d << "; " << "e = " << f << "; " << "y = " << g << "; " << "u = " << h << "; " << "i = " << j << "; " << "i = " << k << "; " << endl;
     }
  return 0;
  }
