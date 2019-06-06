@@ -1,26 +1,31 @@
 #include <iostream>
+#include <cstdlib>
+#include <string>
 using namespace std;
 
-int main() {
-	string str;
-	int count [] = {0, 0, 0, 0, 0};
-	char symbol [] = {'a', 'e', 'o', 'i', 'u'};
-	getline(cin, str);
-	for (int i = 0; i < str.length(); i++) {
-		if (str[i] == 'a') {
-			count[0]++;
-		} else if (str[i] == 'e')  {
-			count[1]++;
-		} else if (str[i] == 'i')  {
-			count[2]++;
-		} else if (str[i] == 'o')  {
-			count[3]++;
-		} else if (str[i] == 'u')  {
-			count[4]++;
-		}
-	}
-	for (int i = 0; i < (sizeof(count)/sizeof(count[0])); i++) {
-		cout<<symbol[i]<<" = "<<count[i]<<endl;
-	}
-	return 0;
-}
+int main()
+{
+ string s, a = "a", e = "e", y = "y", u = "u", i = "i", o = "o";
+ int t = 0, c = 0, h = 0, k = 0, m = 0, z = 0;
+ getline(cin,s);
+ s.length();
+ for (int p = 0; p < s.length(); p++)
+	{
+ if (s[p] == 'a')
+ t++;
+ if (s[p] == 'e')
+ c++;
+ if (s[p] == 'y')
+ h++;
+ if (s[p] == 'u')
+ k++;
+ if (s[p] == 'i')
+ m++;
+ if (s[p] == 'o')
+ z++;
+ }
+    {
+        cout << "a = " << t << "; " << "e = " << c << "; " << "y = " << h << "; " << "u = " << k << "; " << "i = " << m << "; " << "i = " << z << "; " << endl;
+    }
+ return 0;
+ }
