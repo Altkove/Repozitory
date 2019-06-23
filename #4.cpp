@@ -2,11 +2,11 @@
 #include <cstdlib>
 #include <string>
 using namespace std;
- string s;
- int x = 0;
-int z()
+
+string z(string &s)
 {
-    for (int x = 0; x < s.length(); x++)
+    int x;
+    for (x = 0; x < s.length(); x++)
  {
      if(s[x]=='O')
             s[x]=char(s[x]+32);
@@ -21,14 +21,15 @@ int z()
      if(s[x]=='Y')
             s[x]=char(s[x]+32);
  } 
-    return s[x];
+    return s;
 }
 
 int main()
 {
+     string s;
  getline(cin,s);
  s.length();
-    z();
-     cout << s << endl;
+    z(s);
+     cout << z(s) << endl;
  return 0;
 }
