@@ -2,10 +2,8 @@
 #include <cstdlib>
 #include <string>
 using namespace std;
-string s;
-int d = 0, f = 0, g = 0, h = 0, j = 0, k = 0;
-int x=0;
-int z()
+
+int z(string &s, int &d, int &f, int &g, int &h, int &j, int &k)
 {
     for (int x = 0; x < s.length(); x++)
     {
@@ -56,9 +54,12 @@ int z()
 }
 int main()
 {
+    string s;
+int d = 0, f = 0, g = 0, h = 0, j = 0, k = 0;
+int x=0;
     getline(cin,s);
     s.length();   
-    z();
+    z(s, d, f, g, h, j, k);
     cout << "o = " << d << "; " << "e = " << f << "; " << "i = " << g << "; " << "a = " << h << "; " << "u = " << j << "; " << "y = " << k << "; " << endl;
     return 0;
 }
