@@ -1,84 +1,59 @@
 #include <iostream>
-#include <cstdlib>
 #include <string>
+#include <cstdio>
 using namespace std;
 
-int* z(string s)
-{
-    int chechik[6];
-	for (int x = 0; x < 6; x++) {
-		chechik[x] = 0;
+int* func(string str) {
+	int mas[6];
+	for (int i = 0; i < 6; i++) {
+		mas[i] = 0;
 	}
-    for (int x = 0; x < s.length(); x++)
-    {
-            if (s[x] == 'o')
-               chechik[0]++;
-        while (s[x] == 'o')
-        {
-            s.erase(x,1);
-            x--;
-        }
-            if (s[x] == 'e')
-                chechik[1]++;
-        while (s[x] == 'e')
-        {
-            s.erase(x,1);
-            x--;
-        }
-            if (s[x] == 'i')
-                 chechik[2]++;
-        while (s[x] == 'i')
-        {
-            s.erase(x,1);
-            x--;
-        }
-            if (s[x] == 'a')
-                 chechik[3]++;
-        while (s[x] == 'a')
-        {
-            s.erase(x,1);
-            x--;
-        }
-            if (s[x] == 'u')
-                 chechik[4]++;
-        while (s[x] == 'u')
-        {
-            s.erase(x,1);
-            x--;
-        }
-            if (s[x] == 'y')
-                 chechik[5]++;
-        while (s[x] == 'y')
-        {
-            s.erase(x,1);
-            x--;
-        }
-    }  
-    return  chechik;
-}
-int main()
-{
-char ss[] = {'o', 'e', 'i', 'a', 'u', 'y'};
-	int test1[6], test2[6], test3[6];
-	int a[] = {2,7,0,2,0,0};
-	int b[] = {0,1,0,9,0,5};
-	int c[] = {0,0,0,5,0,1};
-	bool test = true;
-	for (int x=0; x<(sizeof(ss)/sizeof(ss[0])); x++) {
-		test1[x] = *(z("xz xz xz")+x);
-		test2[x] = *(z("argihalrjh aaerkoiah kaopfga")+x);
-		test3[x] = *(z("")+x);
-	}
-	for (int x=0; x<(sizeof(ss)/sizeof(ss[0])); x++) {
-		if (test1[x]!=a[x] || test2[x]!=b[x] || test3[x]!=c[x]) {
-			test = false;
+	for (int i = 0; i < str.length(); i++) {
+		if (str[i] == 'a') {
+			mas[0]++;
+		}
+		else if (str[i] == 'o') {
+			mas[1]++;
+		}
+		if (str[i] == 'e') {
+			mas[2]++;
+		}
+		else if (str[i] == 'i') {
+			mas[3]++;
+		}
+		if (str[i] == 'u') {
+			mas[4]++;
+		}
+		else if (str[i] == 'y') {
+			mas[5]++;
 		}
 	}
-	if (!test) {
-		cout<<"Ne norm"<<endl;
+	return mas;
+}
+
+int main() {
+	bool value = true;
+	char symbol[] = { 'a', 'u', 'e', 'o', 'y', 'i' };
+	int test_1[6], test_2[6], test_3[6];
+	int a[] = { 4, 4, 0, 0, 0, 0 };
+	int b[] = { 0, 0, 0, 0, 0, 0 }; 
+	int c[] = { 1, 2, 3, 1, 5, 8 };
+	for (int i = 0; i < (sizeof(symbol) / sizeof(symbol[0])); i++) {
+		test_1[i] = *(func("etu etu etu") + i);
+		test_2[i] = *(func("") + i);
+		test_3[i] = *(func("aeoi yio intru io e") + i);
+	}
+	for (int i = 0; i < (sizeof(symbol) / sizeof(symbol[0])); i++) {
+		if (test_1[i] != a[i] || test_2[i] != b[i] || test_3[i] != c[i]) {
+			value = false;
+		}
+	}
+	if (value) {
+		cout << "problem" << endl;
 		return 1;
-	} else {
-		cout<<"Norm"<<endl;
+	}
+	else {
+		cout << "it`s working" << endl;
 	}
 	return 0;
 }
