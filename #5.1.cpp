@@ -58,7 +58,7 @@ int* z(string s)
 }
 int main()
 {
-char ss[] = {'a', 'e', 'o', 'i', 'u', 'y'};
+char ss[] = {'o', 'e', 'i', 'a', 'u', 'y'};
 	int test1[6], test2[6], test3[6];
 	int a[] = {2,7,0,2,0,0};
 	int b[] = {0,1,0,9,0,5};
